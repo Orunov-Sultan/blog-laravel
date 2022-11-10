@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Категория</h1>
+                        <h1 class="m-0">Тэг</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
 
@@ -34,12 +34,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">{{ $category->id }}</th>
-                                    <td>{{ $category->title }}</td>
+                                    <th scope="row">{{ $tag->id }}</th>
+                                    <td>{{ $tag->title }}</td>
                                     <td >
                                         <div class="d-flex justify-content-center">
-                                            <a class="mx-2" href="{{ route('admin.categories.edit', $category->id) }}"><i class="fa fa-pen text-green"></i></a>
-                                            <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST">
+                                            <a class="mx-2" href="{{ route('admin.tags.edit', $tag->id) }}"><i class="fa fa-pen text-green"></i></a>
+                                            <form action="{{ route('admin.tags.delete', $tag->id) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button type="submit" class="mx-2 border-0 bg-transparent"><i class="fa fa-trash text-red"></i></button>
                                             </form>

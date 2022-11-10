@@ -25,12 +25,12 @@
                 <div class="row">
                     <div class="col-4">
                     <div class="text-right mb-3">
-                        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Добавить категорию</a>
+                        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Добавление категории</a>
                     </div>
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Название</th>
                                     <th scope="col">Действие</th>
                                 </tr>

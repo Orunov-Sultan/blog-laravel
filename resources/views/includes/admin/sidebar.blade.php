@@ -34,6 +34,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.tags.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-tags"></i>
+                        <p>
+                            Тэги
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="https://adminlte.io/docs/3.1/" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>Documentation</p>
