@@ -26,6 +26,12 @@
                 data-accordion="false">
                 <li class="nav-header">АДМИН ПАНЕЛЬ</li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.posts.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-file"></i>
+                        <p>Посты</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.categories.index') }}" class="nav-link">
                         <i class="nav-icon far fa-list-alt"></i>
                         <p>
@@ -39,12 +45,6 @@
                         <p>
                             Тэги
                         </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Documentation</p>
                     </a>
                 </li>
             </ul>
