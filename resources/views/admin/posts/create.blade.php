@@ -25,25 +25,42 @@
                 <div class="row">
                     <div class="col-6">
 
-                        <form action="{{ route('admin.posts.store') }}" method="POST">
+                        <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <div class="form-group mb-3">
+                                <label for="title">Добавление поста</label>
+                                <input value="{{ old('title') }}" name="title" type="text" class="form-control" id="title" placeholder="Название поста...">
+                                @error('title')
+                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                @enderror
+                            </div>
                             <div class="form-group">
-                                <div class="mb-3">
-                                    <label for="title">Добавление поста</label>
-                                    <input name="title" type="text" class="form-control" id="title" placeholder="Название поста...">
-                                    @error('title')
-                                    <div class="text-danger">Это поле обязательно для заполнения</div>
-                                    @enderror
-                                </div>
-                                <div>
-                                    <label for="summernote">Добавление текста</label>
-                                    <textarea id="summernote" name="content" class="mt-3"></textarea>
-                                    @error('content')
-                                    <div class="text-danger">Это поле обязательно для заполнения</div>
-                                    @enderror
+                                <label for="preview_image">Добавить превью</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input name="preview_image" type="file" class="custom-file-input" id="preview_image">
+                                        <label class="custom-file-label" for="preview_image">Выберите изображение</label>
+                                    </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Добавить</button>
+                            <div class="form-group">
+                                <label for="main_image">Добавить главное изображение</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input name="main_image" type="file" class="custom-file-input" id="main_image">
+                                        <label class="custom-file-label" for="main_image">Выберите изображение</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="summernote">Добавление текста</label>
+                                <textarea id="summernote" name="content" class="mt-3">{{ old('content') }}</textarea>
+                                @error('content')
+                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                @enderror
+                            </div>                           <div class="form-group">
+                               <button type="submit" class="btn btn-primary">Добавить</button>
+                           </div>
                         </form>
 
                     </div>
