@@ -6,7 +6,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        <img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
     </div>
 
     <!-- Navbar -->
@@ -49,5 +49,22 @@
 <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+
+<script>
+    $(function () {
+        $('#summernote').summernote({
+            placeholder: 'Добавьте текст статьи',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+            ]
+        });
+    })
+</script>
 </body>
 </html>

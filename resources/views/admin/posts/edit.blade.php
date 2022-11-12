@@ -35,6 +35,7 @@
                                 @error('title')
                                 <div class="text-danger">Это поле обязательно для заполнения</div>
                                 @enderror
+                                <textarea id="summernote" name="content"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Редактировать</button>
                         </form>
