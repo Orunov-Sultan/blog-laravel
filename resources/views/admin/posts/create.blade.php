@@ -38,10 +38,13 @@
                                 <label for="preview_image">Добавить превью</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input name="preview_image" type="file" class="custom-file-input" id="preview_image">
+                                        <input name="preview_image" type="file" class="custom-file-input" id="preview_image"">
                                         <label class="custom-file-label" for="preview_image">Выберите изображение</label>
                                     </div>
                                 </div>
+                                @error('preview_image')
+                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="main_image">Добавить главное изображение</label>
@@ -51,6 +54,18 @@
                                         <label class="custom-file-label" for="main_image">Выберите изображение</label>
                                     </div>
                                 </div>
+                                @error('preview_image')
+                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Выбор категории</label>
+                                <select class="form-control" name="category_id">
+                                    @foreach($categories as $category)
+                                    <option {{ $category->id == old('category_id') ? ' selected' : '' }}
+                                            value="{{ $category->id }}">{{ $category->title }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="summernote">Добавление текста</label>
