@@ -32,7 +32,7 @@
                                 <label for="title">Заголовок</label>
                                 <input value="{{ $post->title }}" name="title" type="text" class="form-control" id="title" placeholder="Название поста...">
                                 @error('title')
-                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -46,6 +46,9 @@
                                         <label class="custom-file-label" for="preview_image">Выберите изображение</label>
                                     </div>
                                 </div>
+                                @error('preview_image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="main_image">Главное изображение</label>
@@ -59,7 +62,7 @@
                                     </div>
                                 </div>
                                 @error('preview_image')
-                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -70,6 +73,9 @@
                                                 value="{{ $category->id }}">{{ $category->title }}</option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Тэги</label>
@@ -83,7 +89,7 @@
                                 <label for="summernote">Редактирование текста</label>
                                 <textarea id="summernote" name="content" class="mt-3">{{ $post->content }}</textarea>
                                 @error('content')
-                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">

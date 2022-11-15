@@ -23,7 +23,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                     <div class="text-right mb-3">
                         <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">Добавление поста</a>
                     </div>
