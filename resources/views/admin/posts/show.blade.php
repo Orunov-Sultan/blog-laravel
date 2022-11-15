@@ -38,8 +38,8 @@
                                     <td>{{ $post->title }}</td>
                                     <td >
                                         <div class="d-flex justify-content-center">
-                                            <a class="mx-2" href="{{ route('admin.categories.edit', $post->id) }}"><i class="fa fa-pen text-green"></i></a>
-                                            <form action="{{ route('admin.categories.delete', $post->id) }}" method="POST">
+                                            <a class="mx-2" href="{{ route('admin.posts.edit', $post->id) }}"><i class="fa fa-pen text-green"></i></a>
+                                            <form action="{{ route('admin.posts.delete', $post->id) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button type="submit" class="mx-2 border-0 bg-transparent"><i class="fa fa-trash text-red"></i></button>
                                             </form>
