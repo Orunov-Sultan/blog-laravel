@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Пользователи</h1>
+                        <h1 class="m-0">Добавление пользователя</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
 
@@ -28,10 +28,21 @@
                         <form action="{{ route('admin.users.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="title">Добавление пользователя</label>
-                                <input name="name" type="text" class="form-control" id="title" placeholder="Введите Имя...">
+                                <input name="name" type="text" class="form-control" id="title" placeholder="Имя...">
                                 @error('name')
                                     <div class="text-danger">Это поле обязательно для заполнения</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input name="email" type="text" class="form-control" id="title" placeholder="Email...">
+                                @error('email')
+                                <div class="text-danger">Это поле обязательно для заполнения</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="text" class="form-control" id="title" placeholder="Пароль...">
+                                @error('password')
+                                <div class="text-danger">Это поле обязательно для заполнения</div>
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Добавить</button>
