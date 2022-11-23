@@ -40,6 +40,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label>Выбор роли</label>
+                                <select class="form-control" name="role">
+                                    @foreach($roles as $id => $role)
+                                        <option {{ $id == old('role') ? ' selected' : '' }}
+                                                value="{{ $id }}">{{ $role }}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <input name="password" type="text" class="form-control" id="title" placeholder="Пароль...">
                                 @error('password')
                                 <div class="text-danger">Это поле обязательно для заполнения</div>
