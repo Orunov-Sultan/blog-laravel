@@ -51,12 +51,6 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <input name="password" type="text" class="form-control" id="title" placeholder="Пароль...">
-                                @error('password')
-                                <div class="text-danger">Это поле обязательно для заполнения</div>
-                                @enderror
-                            </div>
                             <button type="submit" class="btn btn-primary">Добавить</button>
                         </form>
 
