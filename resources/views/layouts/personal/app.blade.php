@@ -52,7 +52,7 @@
     </nav>
     <!-- /.navbar -->
 
-@include('includes.admin.sidebar')
+@include('includes.personal.sidebar')
 
 @yield('content')
 
