@@ -20,6 +20,33 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
+                    <div class="col-6">
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Название Статьи</th>
+                                <th scope="col">Действие</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($posts as $post)
+                                <tr>
+                                    <td>{{ $post->title }}</td>
+                                    <td>
+                                        <div class="d-flex justify-content-center">
+                                            <a href="{{ route('admin.posts.show', $post->id) }}" class="mx-2"><i class="fa fa-eye"></i></a>
+                                            <form action="{{ route('personal.delete.index', $post->id) }}" method="POST">
+                                                @csrf @method('DELETE')
+                                                <button type="submit" class="mx-2 border-0 bg-transparent"><i class="fa fa-trash text-red"></i></button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
                 <!-- /.row -->
 
