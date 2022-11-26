@@ -16,6 +16,7 @@ use App\Http\Controllers\Main\IndexController;
 
 Route::group(['namespace' => 'Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
+    Route::get('/about', 'AboutController')->name('main.about');
 });
 
 Route::group(['namespace' => 'Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
