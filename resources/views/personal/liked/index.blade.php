@@ -34,7 +34,7 @@
                                     <td>{{ $post->title }}</td>
                                     <td>
                                         <div class="d-flex justify-content-center">
-                                            <a href="{{ route('admin.posts.show', $post->id) }}" class="mx-2"><i class="fa fa-eye"></i></a>
+                                            <a href="{{ route('personal.posts.show', $post->id) }}" class="mx-2"><i class="fa fa-eye"></i></a>
                                             <form action="{{ route('personal.delete.index', $post->id) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button type="submit" class="mx-2 border-0 bg-transparent"><i class="fa fa-trash text-red"></i></button>
