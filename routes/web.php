@@ -19,6 +19,11 @@ Route::group(['namespace' => 'Main'], function () {
     Route::get('/about', 'AboutController')->name('main.about');
 });
 
+Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
+    Route::get('/', 'IndexController')->name('post.index');
+    Route::get('/{post}', 'ShowController')->name('post.show');
+});
+
 Route::group(['namespace' => 'Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('personal.main.index');
