@@ -1,4 +1,4 @@
-<footer class="edica-footer" data-aos="fade-up">
+<footer class="edica-footer" style="padding-top: 100px; margin-top: 20px;" data-aos="fade-up">
     <div class="container">
         <div class="row footer-widget-area">
             <div class="col-md-3">
